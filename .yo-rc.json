@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.transporatadora"
+    },
+    "jhipsterVersion": "6.0.1",
+    "applicationType": "monolith",
+    "baseName": "db_operacoes",
+    "packageName": "br.com.transporatadora",
+    "packageFolder": "br/com/transporatadora",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjAzOTBlNDM4ZWRmMjY4YmI3ZDVhZjgwZDExYzk5MTZjMzkzYjhmNDc4MDE2NmU4YmM0MWIzNDE2NmUwMWE5NmM4MTQ1M2M0NzYyYmJhZWQzNjQzMTJiZDJjNjYyNTM0NWYyMmI5NGMxZGNlNWViNjAwOGEwNWQ5ZjZkMWY2Yzg=",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}

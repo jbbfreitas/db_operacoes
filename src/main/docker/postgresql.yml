@@ -1,0 +1,11 @@
+version: '2'
+services:
+  db_operacoes-postgresql:
+    image: postgres:11.2
+    # volumes:
+    #     - ~/volumes/jhipster/db_operacoes/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=db_operacoes
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
