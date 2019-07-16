@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span>Tabela 1 S</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tabela-1" [routerLink]="['/tabela-1/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Tabela 1
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="tabela1S">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="point_id"><span>Point Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="date_visit"><span>Date Visit</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="max_pdop"><span>Max Pdop</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tabela1 of tabela1S ;trackBy: trackId">
+                <td><a [routerLink]="['/tabela-1', tabela1.id, 'view' ]">{{tabela1.id}}</a></td>
+                <td>{{tabela1.point_id}}</td>
+                <td>{{tabela1.date_visit | date:'mediumDate'}}</td>
+                <td>{{tabela1.max_pdop}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/tabela-1', tabela1.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/tabela-1', tabela1.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'tabela-1', { outlets: { popup: tabela1.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="tabela1S && tabela1S.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

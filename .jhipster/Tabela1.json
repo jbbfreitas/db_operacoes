@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "point_id",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date_visit",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "max_pdop",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20190715233549",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "tabela1",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabela1">
+            <h2><span>Tabela 1</span> {{tabela1.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Point Id</span></dt>
+                <dd>
+                    <span>{{tabela1.point_id}}</span>
+                </dd>
+                <dt><span>Date Visit</span></dt>
+                <dd>
+                    <span>{{tabela1.date_visit}}</span>
+                </dd>
+                <dt><span>Max Pdop</span></dt>
+                <dd>
+                    <span>{{tabela1.max_pdop}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tabela-1', tabela1.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
